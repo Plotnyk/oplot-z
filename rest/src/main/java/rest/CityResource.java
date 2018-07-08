@@ -11,7 +11,7 @@ import java.util.List;
 
 */
 /**
- * {@link CityResource} is REST web-service that handles city-related requests
+ * {@link CityResource} is REST web-service that handles city-related requests ttt
  * @author Plotnyk
  *//*
 
