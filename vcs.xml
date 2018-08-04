@@ -14,6 +14,10 @@
           <option name="url" value="https://github.com/levrun/spring-rest-example.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/melphi/java-api-best-practices.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\java\IdeaProjects" />
