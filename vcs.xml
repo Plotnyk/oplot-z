@@ -22,6 +22,10 @@
           <option name="url" value="https://github.com/mkdika/spring5-rest-api.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/spring-guides/gs-rest-service.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="E:\java\IdeaProjects" />
