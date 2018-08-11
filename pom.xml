@@ -8,6 +8,7 @@
     <artifactId>oplot-z</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1</version>
+
     <modules>
         <module>model</module>
         <module>persistence</module>
@@ -23,7 +24,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Spring -->
-        <spring-framework.version>4.2.4.RELEASE</spring-framework.version>
+        <springframework.version>5.0.8.RELEASE</springframework.version>
+
+        <!-- for servelet -->
+        <javax.servlet.api>4.0.1</javax.servlet.api>
+
+        <!-- for json -->
+        <jackson.version>2.9.6</jackson.version>
+
         <!--LOGGING project -->
         <lslf4j.version>1.7.25</lslf4j.version>
         <log4j.version>2.10.0</log4j.version>
@@ -32,20 +40,27 @@
 
     </properties>
 
-    <dependencyManagement>
-        <!--all spring dependencies -->
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring-framework.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <!-- Servelet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet.api}</version>
+        </dependency>
         <!--Test-->
         <dependency>
             <groupId>junit</groupId>
@@ -53,6 +68,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <!-- logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -79,6 +95,7 @@
             <artifactId>log4j-web</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+
         <!--Reflection-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -92,20 +109,31 @@
     and the version of java for compiling the code.
     The encoding of the source code (UTF-8)-->
     <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <compilerArgument>-Xlint:all</compilerArgument>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.7.0</version>
+                            <configuration>
+                                <source>${java.version}</source>
+                                <target>${java.version}</target>
+                                <encoding>${project.build.sourceEncoding}</encoding>
+                                <compilerArgument>-Xlint:all</compilerArgument>
+                                <showWarnings>true</showWarnings>
+                                <showDeprecation>true</showDeprecation>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-war-plugin</artifactId>
+                            <version>3.2.2</version>
+                            <configuration>
+                                <warSourceDirectory>presentation-site/src/main/webapp</warSourceDirectory>
+                                <failOnMissingWebXml>false</failOnMissingWebXml>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+        </pluginManagement>
     </build>
 
 

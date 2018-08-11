@@ -1,3 +1,4 @@
+/*
 package mvc.rest;
 
 import org.springframework.stereotype.Controller;
@@ -10,16 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+*/
 /**
  * {@link CityResource} is REST web-service that handles city-related requests
  * @author Plotnyk
- */
+ *//*
+
 @Controller
 @RequestMapping("/city/rest")
 @EnableWebMvc
 public class CityResource {
 
-    /** look to mvc-config.xml for <mvc:message-converters>. It can produce 'pretty' json response. */
+    */
+/** look to mvc-config.xml for <mvc:message-converters>. It can produce 'pretty' json response. *//*
+
     @RequestMapping(value = "/getAllDBLogsJSON_A", method = RequestMethod.GET, produces = "application/json")
     public @ResponseBody List<TestA> findCities() {
         ArrayList<TestA> result = new ArrayList<>();
@@ -60,8 +65,10 @@ class TestA {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TestA testA = (TestA) o;
-        return id == testA.id; /*&&
-                Objects.equals(user, testA.user)*/
+        return id == testA.id; */
+/*&&
+                Objects.equals(user, testA.user)*//*
+
     }
 
     @Override
@@ -71,3 +78,4 @@ class TestA {
         return result;
     }
 }
+*/

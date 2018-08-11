@@ -10,6 +10,9 @@ import app.model.search.criteria.range.RangeCriteria;
 import app.service.GeographicService;
 import org.apache.commons.lang3.StringUtils;
 
+import org.springframework.stereotype.Service;
+//import org.springframework.transaction.annotation.Transactional;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,6 +21,9 @@ import java.util.stream.Stream;
  * Default implementation of the {@link GeographicService}
  * @author Plotnyk
  */
+
+//@Service("userService")
+//@Transactional
 public class GeographicServiceImpl implements GeographicService{
     /**Internal list of cities*/
     private final List<City> cities;
@@ -26,6 +32,7 @@ public class GeographicServiceImpl implements GeographicService{
     private int counter = 0;
 
     public GeographicServiceImpl() {
+        System.out.println("GeographicServiceImpl: " + getClass().getName());
         this.cities = new ArrayList<City>();
     }
 
@@ -41,8 +48,8 @@ public class GeographicServiceImpl implements GeographicService{
 
     @Override
     public List<Company> searchCompanies(CompanyCriteria criteria, RangeCriteria rangeCriteria) {
-        Objects.requireNonNull(criteria, "'branchCriteria' parameter is ont initialized");
-        Objects.requireNonNull(rangeCriteria, "'rangeCriteria' parameter is ont initialized");
+        Objects.requireNonNull(criteria, "'branchCriteria' parameter is not initialized");
+        Objects.requireNonNull(rangeCriteria, "'rangeCriteria' parameter is not initialized");
         Stream<City> streamCity = cities.stream().filter(city -> StringUtils.isEmpty(criteria.getName()) || city.getName().equals(criteria.getName()));
 
 

@@ -11,116 +11,22 @@
 
     <artifactId>presentation-site</artifactId>
 
-    <properties>
-        <!-- Web -->
-        <jsp.version>2.2</jsp.version>
-        <jstl.version>1.2</jstl.version>
-        <javaee.api>7.0</javaee.api>
-        <servlet.version>3.1.0</servlet.version>
-        <!-- JSON -->
-        <jackson.version>2.6.3</jackson.version>
-        <jackson.databind>2.9.4</jackson.databind>
-        <!--Test-->
-        <hamcres.all>1.3</hamcres.all>
-        <mockito.core>2.15.0</mockito.core>
-        <json.path>2.2.0</json.path>
-        <json.path.assert>2.2.0</json.path.assert>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.2</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.plotnyk</groupId>
-            <artifactId>model</artifactId>
-            <version>${parent.version}</version>
-        </dependency>
-        <!-- Spring MVC -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-        <!-- Spring REST jackson JSON Processing API -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.databind}</version>
-        </dependency>
-        <!-- Need this for json to/from object important dependency-->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-
-        <!-- Other Servlet Web dependencies -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>${jsp.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${javaee.api}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!--Test Spring-->
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>${hamcres.all}</version>
-            <scope>test</scope>
-        </dependency>
-<!--        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>hamcrest-core</artifactId>
-                    <groupId>org.hamcrest</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.core}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring-framework.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path</artifactId>
-            <version>${json.path}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path-assert</artifactId>
-            <version>${json.path.assert}</version>
-            <scope>test</scope>
-        </dependency>
-
-    </dependencies>
 
 
 </project>

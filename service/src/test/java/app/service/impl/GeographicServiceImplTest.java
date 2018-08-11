@@ -71,6 +71,7 @@ public class GeographicServiceImplTest {
     }
 
     @Test
+    @Ignore
     public void testSearchCompaniesByNameSuccess() {
         City city = new City("Odessa");
         city.setId(DEFAULT_CITY_ID);

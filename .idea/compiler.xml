@@ -15,7 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="model" target="1.8" />
-      <module name="oplot-z" target="1.8" />
+      <module name="oplot-z" target="1.5" />
       <module name="persistence" target="1.8" />
       <module name="presentation-site" target="1.8" />
       <module name="rest" target="1.8" />
