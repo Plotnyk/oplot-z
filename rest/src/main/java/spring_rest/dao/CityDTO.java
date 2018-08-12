@@ -5,7 +5,7 @@ import spring_rest.dao.base.BaseDTO;
 
 /**
  * Holds city state for the client-server communication
- * @author Morenets
+ * @author Plotnyk
  *
  */
 public class CityDTO extends BaseDTO<City> {
