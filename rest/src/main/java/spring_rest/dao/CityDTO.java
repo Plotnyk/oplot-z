@@ -4,7 +4,7 @@ import app.model.entity.geography.City;
 import spring_rest.dao.base.BaseDTO;
 
 /**
- * Holds city state for the client-server communication(ttt)
+ * Holds city state for the client-server communication
  * @author Plotnyk
  *
  */
