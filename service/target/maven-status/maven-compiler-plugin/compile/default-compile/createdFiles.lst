@@ -1,0 +1,6 @@
+app\service\transform\Transformer.class
+app\service\impl\GeographicServiceImpl.class
+app\service\GeographicService.class
+app\service\transform\impl\FieldProvider.class
+app\service\transform\impl\SimpleDTOTransformer.class
+app\service\transform\impl\CachedFieldProvider.class

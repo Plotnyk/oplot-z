@@ -1,0 +1,11 @@
+spring_rest\model\Application.class
+spring_rest\controller\Endpoints.class
+spring_rest\dao\CityDTO.class
+spring_rest\controller\ApplicationController.class
+spring_rest\config\AppInitializer.class
+spring_rest\controller\CategoriesController.class
+spring_rest\dao\ApplicationsDao.class
+spring_rest\model\AppCategory.class
+spring_rest\config\AppConfig.class
+spring_rest\dao\base\BaseDTO.class
+spring_rest\dao\AppCategoriesDao.class
