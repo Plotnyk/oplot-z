@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
+    <Properties>
+        <Property name="log-path">logs_oplot/</Property>
+    </Properties>
     <Appenders>
-        <File name="fileLog" fileName="service.log">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n" />
-        </File>
+        <!-- Rolling File Appender -->
+        <RollingFile name="fileLog" fileName="${log-path}/log.log"
+                     filePattern="${log-path}/log-%d{yyyy-MM-dd}-%i.log" >
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="2 MB" />
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+
+
+        <!-- Console Appender -->
         <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n" />
+            <PatternLayout pattern="[%-5level] %d{HH:mm:ss.SSS} %c{1} - %msg%n" />
         </Console>
     </Appenders>
     <Loggers>
-        <logger level="DEBUG">
+        <logger name="rest" level="INFO" additivity="false">
             <AppenderRef ref="fileLog" />
         </logger>
-        <Root level="TRACE">
+        <Logger name="service" level="INFO" additivity="false">
+            <AppenderRef ref="fileLog"/>
+        </Logger>
+        <Root  level="INFO">
             <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="fileLog" />
         </Root>
     </Loggers>
 </Configuration>
