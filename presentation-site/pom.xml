@@ -12,6 +12,12 @@
     <artifactId>presentation-site</artifactId>
 
     <build>
+        <!--Подключение общего ресурса-->
+        <resources>
+            <resource>
+                <directory>../resources</directory>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>

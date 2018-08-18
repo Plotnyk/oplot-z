@@ -116,6 +116,11 @@
     and the version of java for compiling the code.
     The encoding of the source code (UTF-8)-->
     <build>
+        <resources>
+            <resource>
+                <directory>resources</directory>
+            </resource>
+        </resources>
         <pluginManagement>
                     <plugins>
                         <plugin>

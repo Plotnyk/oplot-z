@@ -51,12 +51,12 @@
     </dependency>
 
         <!--Test Rest-->
-        <dependency>
+<!--        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>4.3.18.RELEASE</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.glassfish.grizzly</groupId>
             <artifactId>grizzly-http-servlet</artifactId>
@@ -66,6 +66,12 @@
     </dependencies>
 
     <build>
+        <resources>
+            <!--Подключение общего ресурса-->
+            <resource>
+                <directory>../resources</directory>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>
