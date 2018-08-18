@@ -31,7 +31,7 @@ public class CategoriesControllerTest {
     public static void setup(){
         properties = new Properties();
         try {
-            properties.load(new FileInputStream("E:\\java\\oplot-z\\resourses\\ser.properties"));
+            properties.load(new FileInputStream("ser.properties"));
             domen = properties.getProperty("domen.site");
         } catch (IOException e) {
             e.printStackTrace();
