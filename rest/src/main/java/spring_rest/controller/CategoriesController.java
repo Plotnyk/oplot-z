@@ -22,7 +22,7 @@ public class CategoriesController {
     private AppCategoriesDao appCategoriesDao;
 
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public List<String> findCities() {
         return Arrays.asList("Odessa", "Kiyv");
     }

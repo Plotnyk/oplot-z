@@ -17,11 +17,14 @@ public class Company extends AbstractEntity {
     /** Name company*/
     private String nameCompany;
 
-    /**Location of the company office*/
+    /** Location of the company office*/
     private Address addressLocation;
 
-    /**Branches of the company*/
+    /** Branches of the company*/
     private Set<Branch> branches;
+
+    /** Branches of the performances*/
+    private Set<Performance> performances;
 
     /** Visible labels company  on the map */
     private boolean visibleMap;
@@ -90,7 +93,7 @@ public class Company extends AbstractEntity {
         return branches;
     }
 
-    public Branch addBranch(final String nameNewBranch) {
+    public Branch addBranch(final String nameNewBranch, final City city) {
         Objects.requireNonNull(nameNewBranch, "'nameNewBranch' parameter is not initialized");
         if (branches == null) {
             branches = new HashSet<>();

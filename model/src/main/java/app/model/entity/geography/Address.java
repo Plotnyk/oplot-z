@@ -8,6 +8,8 @@ import app.model.entity.base.AbstractEntity;
  * @author Plotnyk
  */
 public class Address extends AbstractEntity {
+    City city;
+
     private String zipCode;
 
     private String street;
@@ -19,6 +21,25 @@ public class Address extends AbstractEntity {
      * of the apartment
      */
     private String apartment;
+
+    @Override
+    public String toString() {
+        return "Address{" + "country=" + city.getRegion().getCountry() +
+                "city=" + city +
+                ", zipCode='" + zipCode + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNo='" + houseNo + '\'' +
+                ", apartment='" + apartment + '\'' +
+                '}';
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
 
     public String getZipCode() {
         return zipCode;
@@ -51,4 +72,5 @@ public class Address extends AbstractEntity {
     public void setApartment(String apartment) {
         this.apartment = apartment;
     }
+
 }
