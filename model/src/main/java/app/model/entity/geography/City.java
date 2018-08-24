@@ -14,22 +14,33 @@ import java.util.Set;
  * @author Plotnyk
  */
 public class City extends AbstractEntity {
+
     private String name;
 
     /** Name of the district where city is placed (район) */
-    private String district;
+    private District district;
 
     /**
      * Name of the region where district is located. Region is top-level area in
      * the country (область)
      */
-    private String region;
+    private Region region;
 
     /** Set of companies that is linked to this locality */
     private Set<Company> companies;
 
-    public City(final String name) {
+    public City(final String name, final Region region) {
+        Objects.requireNonNull(name, "'name' of city parameter is not initialized");
+        Objects.requireNonNull(region, "'region' of city parameter is not initialized");
         this.name = name;
+        this.region = region;
+    }
+    public City(final String name, final District district) {
+        Objects.requireNonNull(name, "'name' of city parameter is not initialized");
+        Objects.requireNonNull(region, "'region' of city parameter is not initialized");
+        this.name = name;
+        this.district = district;
+        this.region = district.getRegion();
     }
 
     /**
@@ -57,8 +68,8 @@ public class City extends AbstractEntity {
         companies.remove(company);
     }
 
-    /*Getters and Setters*/
 
+    /*Getters and Setters*/
     public Set<Company> getCompanies() {
         return CommonUtil.getSafeSet(companies);
     }
@@ -75,5 +86,19 @@ public class City extends AbstractEntity {
         this.name = name;
     }
 
+    public Region getRegion() {
+        return region;
+    }
 
+    public void setRegion(Region region) {
+        this.region = region;
+    }
+
+    public District getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(District district) {
+        this.district = district;
+    }
 }

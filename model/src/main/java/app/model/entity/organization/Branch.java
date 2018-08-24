@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Plotnyk
  */
 public class Branch extends AbstractEntity {
-    /**Name company */
+    /**Name Branch */
     private String nameBranch;
 
     private City city;

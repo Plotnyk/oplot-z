@@ -1,10 +1,12 @@
 package app.model.entity.person;
 
+import app.model.entity.base.AbstractEntity;
+
 /**
  * Entity that encapsulates user of the application
  * @author Plotnyk
  */
-public class User {
+public class User extends AbstractEntity {
     /**Unique user name vithit the system*/
     private String userName;
     /**User password*/
