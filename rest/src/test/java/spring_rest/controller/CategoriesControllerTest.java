@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 
 public class CategoriesControllerTest {
 
-    private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
+    /*private static final String CONTENT_TYPE = "application/json;charset=UTF-8";
     private static Properties properties;
     private static String domen;
 
@@ -69,5 +69,5 @@ public class CategoriesControllerTest {
         final String mimeType = ContentType.getOrDefault(response.getEntity()).getMimeType();
         assertEquals(jsonMimeType, mimeType);
     }
-
+*/
 }
