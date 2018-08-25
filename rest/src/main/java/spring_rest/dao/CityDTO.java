@@ -1,6 +1,6 @@
 package spring_rest.dao;
 
-import app.model.entity.geography.City;
+import app.model.entity.geography.Place;
 import spring_rest.dao.base.BaseDTO;
 
 /**
@@ -8,7 +8,7 @@ import spring_rest.dao.base.BaseDTO;
  * @author Plotnyk
  *
  */
-public class CityDTO extends BaseDTO<City> {
+public class CityDTO extends BaseDTO<Place> {
     private String name;
 
     /**

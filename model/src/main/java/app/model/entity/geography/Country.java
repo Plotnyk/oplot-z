@@ -13,7 +13,7 @@ public class Country extends AbstractEntity {
     private Set<Region> regions;
 
     public Region addRegion(final String nameNewRegion) {
-        Objects.requireNonNull(nameNewRegion, "'nameNewCity' parameter is not initialized");
+        Objects.requireNonNull(nameNewRegion, "'nameNewRegion' parameter is not initialized");
         if (regions == null) {
             regions = new HashSet<Region>();
         }
@@ -62,5 +62,9 @@ public class Country extends AbstractEntity {
 
     public void setCodePhone(String codePhone) {
         this.codePhone = codePhone;
+    }
+
+    public Set<Region> getRegions() {
+        return regions;
     }
 }

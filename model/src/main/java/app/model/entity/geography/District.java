@@ -11,25 +11,25 @@ import java.util.Set;
 public class District extends AbstractEntity {
     private String name;
     private Region region;
-    private Set<City> cities;
+    private Set<Place> cities;
 
 
-    public City addCity(final String nameNewCity) {
+    public Place addCity(final String nameNewCity) {
         Objects.requireNonNull(nameNewCity, "'nameNewCity' parameter is not initialized");
         if (cities == null) {
-            cities = new HashSet<City>();
+            cities = new HashSet<Place>();
         }
-        City city = new City(nameNewCity, this);
-        cities.add(city);
-        return city;
+        Place place = new Place(nameNewCity, this);
+        cities.add(place);
+        return place;
     }
 
-    public void removeCity(City nameDelCity){
-        Objects.requireNonNull(nameDelCity, "'nameDelCity' parameter is not initialized");
+    public void removeCity(Place nameDelPlace){
+        Objects.requireNonNull(nameDelPlace, "'nameDelPlace' parameter is not initialized");
         if (cities == null) {
             return;
         }
-        cities.remove(nameDelCity);
+        cities.remove(nameDelPlace);
     }
 
 
