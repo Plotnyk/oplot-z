@@ -19,4 +19,13 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <resources>
+            <!--Подключение общего ресурса-->
+            <resource>
+                <directory>../resources</directory>
+            </resource>
+        </resources>
+    </build>
+
 </project>

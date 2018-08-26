@@ -1,11 +1,11 @@
 package app.model.entity.organization;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
-import app.model.entity.geography.City;
+import app.model.entity.geography.Place;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -29,14 +29,44 @@ public class Company extends AbstractEntity {
     /** Visible labels company  on the map */
     private boolean visibleMap;
 
-    private City city;
+    private Place place;
 
     private String phone;
 
-    public Company(final City city, final String nameCompany) {
-        this.city = Objects.requireNonNull(city, "'city' parameter is not initialized");
-        this.nameCompany = Objects.requireNonNull(nameCompany, "'nameCompany' parameter is not initialized");
-        visibleMap = true;
+    public Branch addBranch(final String nameNewBranch, final Place place) {
+        Objects.requireNonNull(nameNewBranch, "'nameNewBranch' parameter is not initialized");
+        if (branches == null) {
+            branches = new HashSet<>();
+        }
+        Branch branch = new Branch(nameNewBranch, this);
+        branches.add(branch);
+        return branch;
+    }
+
+    public void removeBrench(Branch branch) {
+        Objects.requireNonNull(branch, "'branch' parameter is not initialized");
+        if (branch == null) {
+            return;
+        }
+        branches.remove(branch);
+    }
+
+    public Performance addPerformance(final String nameNewPerformance) {
+        Objects.requireNonNull(nameNewPerformance, "'nameNewPerformance' parameter is not initialized");
+        if (performances == null) {
+            performances = new HashSet<>();
+        }
+        Performance performance = new Performance(nameNewPerformance, this);
+        performances.add(performance);
+        return performance;
+    }
+
+    public void removePerformance(Performance delPerformance) {
+        Objects.requireNonNull(delPerformance, "'delPerformance' parameter is not initialized");
+        if (performances == null) {
+            return;
+        }
+        performances.remove(delPerformance);
     }
 
     @Override
@@ -44,7 +74,10 @@ public class Company extends AbstractEntity {
         final int prime = 31;
         int result = super.hashCode();
         result = prime * result + ((addressLocation == null) ? 0 : addressLocation.hashCode());
-        result = prime * result + ((city == null) ? 0 : city.hashCode());
+        result = prime * result + ((place == null) ? 0 : place.hashCode());
+        result = prime * result + ((nameCompany == null) ? 0 : nameCompany.hashCode());
+        result = prime * result + ((branches == null) ? 0 : branches.hashCode());
+        result = prime * result + ((performances == null) ? 0 : performances.hashCode());
         return result;
     }
 
@@ -65,12 +98,21 @@ public class Company extends AbstractEntity {
                 return false;
         } else if (!addressLocation.equals(other.addressLocation))
             return false;
-        if (city == null) {
-            if (other.city != null)
+        if (place == null) {
+            if (other.place != null)
                 return false;
-        } else if (!city.equals(other.city))
+        } else if (!place.equals(other.place))
             return false;
+        if(!nameCompany.equals(other.nameCompany)){
+            return false;
+        }
         return true;
+    }
+
+    public Company(final Place place, final String nameCompany) {
+        this.place = Objects.requireNonNull(place, "'place' parameter is not initialized");
+        this.nameCompany = Objects.requireNonNull(nameCompany, "'nameCompany' parameter is not initialized");
+        visibleMap = true;
     }
 
     public String getNameCompany() {
@@ -90,21 +132,11 @@ public class Company extends AbstractEntity {
     }
 
     public Set<Branch> getBranches() {
-        return branches;
+        return CommonUtil.getSafeSet(branches);
     }
 
-    public Branch addBranch(final String nameNewBranch, final City city) {
-        Objects.requireNonNull(nameNewBranch, "'nameNewBranch' parameter is not initialized");
-        if (branches == null) {
-            branches = new HashSet<>();
-        }
-        Branch branch = new Branch(nameNewBranch, this);
-        branches.add(branch);
-        return branch;
-    }
-
-    public City getCity() {
-        return city;
+    public Place getPlace() {
+        return place;
     }
 
     public String getPhone() {

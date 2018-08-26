@@ -1,5 +1,6 @@
 package app.model.entity.geography;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
 import java.util.HashSet;
@@ -13,7 +14,7 @@ public class Country extends AbstractEntity {
     private Set<Region> regions;
 
     public Region addRegion(final String nameNewRegion) {
-        Objects.requireNonNull(nameNewRegion, "'nameNewCity' parameter is not initialized");
+        Objects.requireNonNull(nameNewRegion, "'nameNewRegion' parameter is not initialized");
         if (regions == null) {
             regions = new HashSet<Region>();
         }
@@ -32,6 +33,24 @@ public class Country extends AbstractEntity {
 
     public Country(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Country country = (Country) o;
+        return Objects.equals(name, country.name) &&
+                Objects.equals(codePhone, country.codePhone) &&
+                Objects.equals(coordinate, country.coordinate) &&
+                Objects.equals(regions, country.regions);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), name, codePhone);
     }
 
     @Override
@@ -62,5 +81,9 @@ public class Country extends AbstractEntity {
 
     public void setCodePhone(String codePhone) {
         this.codePhone = codePhone;
+    }
+
+    public Set<Region> getRegions() {
+        return CommonUtil.getSafeSet(regions);
     }
 }

@@ -1,9 +1,7 @@
 package app.service;
 
-import app.model.entity.geography.City;
-import app.model.entity.organization.Branch;
+import app.model.entity.geography.Place;
 import app.model.entity.organization.Company;
-import app.model.search.criteria.BranchCriteria;
 import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
 
@@ -18,22 +16,22 @@ import java.util.Optional;
 public interface GeographicService {
 
     /**
-     * Returns list of existing cities
+     * Returns list of existing places
      * @return
      */
-    List<City> findCities();
+    List<Place> findPlaces();
 
     /**
-     * Returns city with specified identifier. If no city is found then empty optional is
+     * Returns place with specified identifier. If no city is found then empty optional is
      * returned
      *
      * @param id
      * @return
      */
-    Optional<City> findCitiyById(int id);
+    Optional<Place> findPlaceById(int id);
 
     /**
-     * Returns all the stations that match specified criteria
+     * Returns all the companies that match specified criteria
      * @param criteria
      * @param rangeCriteria
      * @return
@@ -42,8 +40,8 @@ public interface GeographicService {
 
 
     /**
-     * Saves specified city instance
-     * @param city
+     * Saves specified place instance
+     * @param place
      */
-    void saveCity(City city);
+    void savePlace(Place place);
 }

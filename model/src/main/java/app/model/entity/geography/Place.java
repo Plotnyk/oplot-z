@@ -1,6 +1,7 @@
 package app.model.entity.geography;
 
 import app.model.entity.base.AbstractEntity;
+import app.model.entity.geography.num.TypePlace;
 import app.model.entity.organization.Branch;
 import app.model.entity.organization.Company;
 import app.infra.util.CommonUtil;
@@ -13,11 +14,13 @@ import java.util.Set;
  * Any locality that contains company or branch
  * @author Plotnyk
  */
-public class City extends AbstractEntity {
+public class Place extends AbstractEntity {
 
     private String name;
 
-    /** Name of the district where city is placed (район) */
+    private String typePlace;
+
+    /** Name of the district where place is placed (район) */
     private District district;
 
     /**
@@ -29,22 +32,22 @@ public class City extends AbstractEntity {
     /** Set of companies that is linked to this locality */
     private Set<Company> companies;
 
-    public City(final String name, final Region region) {
-        Objects.requireNonNull(name, "'name' of city parameter is not initialized");
-        Objects.requireNonNull(region, "'region' of city parameter is not initialized");
+    public Place(final String name, final Region region) {
+        Objects.requireNonNull(name, "'name' of place parameter is not initialized");
+        Objects.requireNonNull(region, "'region' of place parameter is not initialized");
         this.name = name;
         this.region = region;
     }
-    public City(final String name, final District district) {
-        Objects.requireNonNull(name, "'name' of city parameter is not initialized");
-        Objects.requireNonNull(region, "'region' of city parameter is not initialized");
+    public Place(final String name, final District district) {
+        Objects.requireNonNull(name, "'name' of place parameter is not initialized");
+        Objects.requireNonNull(district, "'district' of place parameter is not initialized");
         this.name = name;
         this.district = district;
         this.region = district.getRegion();
     }
 
     /**
-     * Adds specified company to the city company list
+     * Adds specified company to the place company list
      */
     public Company addCompany(final String nameNewCompany) {
         Objects.requireNonNull(nameNewCompany, "'nameCompany' parameter is not initialized");
@@ -57,7 +60,7 @@ public class City extends AbstractEntity {
     }
 
     /**
-     * Removes specified station from city station list
+     * Removes specified station from place station list
      * @param company
      * */
     public void removeCompany(Company company) {
@@ -69,13 +72,34 @@ public class City extends AbstractEntity {
     }
 
 
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((typePlace == null) ? 0 : typePlace.hashCode());
+        result = prime * result + ((district == null) ? 0 : district.hashCode());
+        result = prime * result + ((region == null) ? 0 : region.hashCode());
+        result = prime * result + ((region.getCountry() == null) ? 0 : region.getCountry().hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Place place = (Place) o;
+        return Objects.equals(name, place.name) &&
+                Objects.equals(typePlace, place.typePlace) &&
+                Objects.equals(district, place.district) &&
+                Objects.equals(region, place.region) &&
+                Objects.equals(companies, place.companies);
+    }
+
     /*Getters and Setters*/
     public Set<Company> getCompanies() {
         return CommonUtil.getSafeSet(companies);
-    }
-
-    public void setCompanies(Set<Company> companies) {
-        this.companies = companies;
     }
 
     public String getName() {
@@ -100,5 +124,13 @@ public class City extends AbstractEntity {
 
     public void setDistrict(District district) {
         this.district = district;
+    }
+
+    public String getTypePlace() {
+        return typePlace;
+    }
+
+    public void setTypePlace(String typePlace) {
+        this.typePlace = typePlace;
     }
 }
