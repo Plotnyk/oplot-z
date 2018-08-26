@@ -1,5 +1,6 @@
 package app.model.entity.organization;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
 import app.model.entity.geography.Place;
@@ -131,7 +132,7 @@ public class Company extends AbstractEntity {
     }
 
     public Set<Branch> getBranches() {
-        return branches;
+        return CommonUtil.getSafeSet(branches);
     }
 
     public Place getPlace() {

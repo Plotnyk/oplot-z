@@ -1,5 +1,6 @@
 package app.model.entity.organization;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
 import app.model.entity.geography.Place;
@@ -171,5 +172,13 @@ public class Branch extends AbstractEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Set<Branch> getBranches() {
+        return CommonUtil.getSafeSet(branches);
+    }
+
+    public Set<Performance> getPerformances() {
+        return CommonUtil.getSafeSet(performances);
     }
 }
