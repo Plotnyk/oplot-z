@@ -12,7 +12,7 @@ public class BranchTest {
     }
 
     @Test
-    public void addBranch() {
+    public void testAddBranch() {
     }
 
     @Test
