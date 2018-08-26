@@ -74,9 +74,7 @@ public class Company extends AbstractEntity {
     public boolean match(final CompanyCriteria companyCriteria) {
         Objects.requireNonNull(companyCriteria, "Company criteria is not initialized");
         if (!StringUtils.isEmpty(companyCriteria.getName())) {
-            System.out.println("getPlace().getName(): " + getPlace().getName() + " ; \n"
-                    + "companyCriteria.getName(): " + companyCriteria.getName() + " ; \n"
-                    + " == :"+ getPlace().getName().equals(companyCriteria.getName()) + " ; \n");
+
             if (!getPlace().getName().equals(companyCriteria.getName())) {
                 return false;
             }
