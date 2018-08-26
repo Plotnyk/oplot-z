@@ -9,7 +9,7 @@ public class CountryTest {
     private Country country;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         country = new Country("Україна");
     }
 
