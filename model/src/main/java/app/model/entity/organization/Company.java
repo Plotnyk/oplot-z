@@ -4,6 +4,8 @@ import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
 import app.model.entity.geography.Place;
+import app.model.search.criteria.CompanyCriteria;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -34,7 +36,7 @@ public class Company extends AbstractEntity {
     private String phone;
 
     public Branch addBranch(final String nameNewBranch, final Place place) {
-        Objects.requireNonNull(nameNewBranch, "'nameNewBranch' parameter is not initialized");
+        Objects.requireNonNull(nameNewBranch, "'nameNewBranch' parameter is not initialized in Company");
         if (branches == null) {
             branches = new HashSet<>();
         }
@@ -44,7 +46,7 @@ public class Company extends AbstractEntity {
     }
 
     public void removeBrench(Branch branch) {
-        Objects.requireNonNull(branch, "'branch' parameter is not initialized");
+        Objects.requireNonNull(branch, "'branch' parameter is not initialized in Company");
         if (branch == null) {
             return;
         }
@@ -52,7 +54,7 @@ public class Company extends AbstractEntity {
     }
 
     public Performance addPerformance(final String nameNewPerformance) {
-        Objects.requireNonNull(nameNewPerformance, "'nameNewPerformance' parameter is not initialized");
+        Objects.requireNonNull(nameNewPerformance, "'nameNewPerformance' parameter is not initialized in Company");
         if (performances == null) {
             performances = new HashSet<>();
         }
@@ -67,6 +69,25 @@ public class Company extends AbstractEntity {
             return;
         }
         performances.remove(delPerformance);
+    }
+
+    public boolean match(final CompanyCriteria companyCriteria) {
+        Objects.requireNonNull(companyCriteria, "Company criteria is not initialized");
+        if (!StringUtils.isEmpty(companyCriteria.getName())) {
+            System.out.println("getPlace().getName(): " + getPlace().getName() + " ; \n"
+                    + "companyCriteria.getName(): " + companyCriteria.getName() + " ; \n"
+                    + " == :"+ getPlace().getName().equals(companyCriteria.getName()) + " ; \n");
+            if (!getPlace().getName().equals(companyCriteria.getName())) {
+                return false;
+            }
+        }
+        if (!StringUtils.isEmpty(companyCriteria.getAddress())) {
+            if (!getAddressLocation().equals(companyCriteria.getAddress())) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
     @Override

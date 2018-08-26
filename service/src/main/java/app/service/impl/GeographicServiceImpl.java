@@ -9,6 +9,8 @@ import app.service.GeographicService;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -43,18 +45,12 @@ public class GeographicServiceImpl implements GeographicService{
     public List<Company> searchCompanies(CompanyCriteria criteria, RangeCriteria rangeCriteria) {
         Objects.requireNonNull(criteria, "'branchCriteria' parameter is not initialized");
         Objects.requireNonNull(rangeCriteria, "'rangeCriteria' parameter is not initialized");
-        Stream<Place> streamCity = places.stream().filter(place -> StringUtils.isEmpty(criteria.getName()) || place.getName().equals(criteria.getName()));
+        Set<Company> companies = new HashSet<>();
 
-
-        Optional<Set<Company>> companies = streamCity.map(Place::getCompanies).reduce((companies1, companies2) -> {
-            Set<Company> newCompanies = new HashSet<>(companies2);
-            newCompanies.addAll(companies1);
-            return newCompanies;
-        });
-        if(!companies.isPresent()) {
-            return Collections.emptyList();
+        for (Place place : places) {
+            companies.addAll(place.getCompanies());
         }
-        return new ArrayList<>(companies.get());
+        return companies.stream().filter(company -> company.match(criteria)).collect(Collectors.toList());
     }
 
     @Override
