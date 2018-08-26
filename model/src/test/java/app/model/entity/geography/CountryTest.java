@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CountryTest {
-    Country country;
+    private Country country;
 
     @Before
     public void setUp() throws Exception {
@@ -67,6 +67,11 @@ public class CountryTest {
 
         assertNotEquals(region, region1);
         assertNotEquals(region, region2);
+    }
+
+    @Test
+    public void testReturnRegionEmptySetSuccess() {
+        assertTrue(country.getRegions().isEmpty());
     }
 
     private boolean containsRegion(Country country, Region region) {

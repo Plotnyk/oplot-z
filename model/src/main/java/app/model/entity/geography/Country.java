@@ -1,5 +1,6 @@
 package app.model.entity.geography;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
 import java.util.HashSet;
@@ -83,6 +84,6 @@ public class Country extends AbstractEntity {
     }
 
     public Set<Region> getRegions() {
-        return regions;
+        return CommonUtil.getSafeSet(regions);
     }
 }

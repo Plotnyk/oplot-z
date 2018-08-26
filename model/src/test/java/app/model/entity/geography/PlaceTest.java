@@ -99,6 +99,11 @@ public class PlaceTest {
         assertEquals(company, company2);
     }
 
+    @Test
+    public void testReturnCompaniesEmptySetSuccess() {
+        assertTrue(placeA.getCompanies().isEmpty());
+    }
+
 
     private boolean containsCompany(Place place, Company company) {
         return place.getCompanies().contains(company);

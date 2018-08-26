@@ -102,10 +102,6 @@ public class Place extends AbstractEntity {
         return CommonUtil.getSafeSet(companies);
     }
 
-    public void setCompanies(Set<Company> companies) {
-        this.companies = companies;
-    }
-
     public String getName() {
         return name;
     }

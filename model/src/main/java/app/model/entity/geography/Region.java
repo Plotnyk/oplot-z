@@ -1,5 +1,6 @@
 package app.model.entity.geography;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
 import java.util.HashSet;
@@ -14,7 +15,7 @@ public class Region extends AbstractEntity {
     private Set<District> districts;
 
     // города и поселки области, которые не имеют района
-    private Set<Place> citiesWithoutDistrict;
+    private Set<Place> placesWithoutDistrict;
 
     public District addDistrict(final String nameNewDistrict) {
         Objects.requireNonNull(nameNewDistrict, "'nameNewDistrict' parameter is not initialized");
@@ -26,30 +27,30 @@ public class Region extends AbstractEntity {
         return district;
     }
 
-    public void removeDistrict(Place nameDelDistrict){
+    public void removeDistrict(District nameDelDistrict){
         Objects.requireNonNull(nameDelDistrict, "'nameDelDistrict' parameter is not initialized");
         if (districts == null) {
             return;
         }
-        citiesWithoutDistrict.remove(nameDelDistrict);
+        districts.remove(nameDelDistrict);
     }
 
-    public Place addCityWithoutDistrict(final String nameNewCity) {
+    public Place addPlaceWithoutDistrict(final String nameNewCity) {
         Objects.requireNonNull(nameNewCity, "'nameNewCity' parameter is not initialized");
-        if (citiesWithoutDistrict == null) {
-            citiesWithoutDistrict = new HashSet<Place>();
+        if (placesWithoutDistrict == null) {
+            placesWithoutDistrict = new HashSet<Place>();
         }
         Place place = new Place(nameNewCity, this);
-        citiesWithoutDistrict.add(place);
+        placesWithoutDistrict.add(place);
         return place;
     }
 
-    public void removeCityWithoutDistrict(Place nameDelPlace){
+    public void removePlaceWithoutDistrict(Place nameDelPlace){
         Objects.requireNonNull(nameDelPlace, "'nameDelPlace' parameter is not initialized");
-        if (citiesWithoutDistrict == null) {
+        if (placesWithoutDistrict == null) {
             return;
         }
-        citiesWithoutDistrict.remove(nameDelPlace);
+        placesWithoutDistrict.remove(nameDelPlace);
     }
 
     @Override
@@ -60,14 +61,12 @@ public class Region extends AbstractEntity {
         Region region = (Region) o;
         return Objects.equals(name, region.name) &&
                 Objects.equals(country, region.country) &&
-                Objects.equals(districts, region.districts) &&
-                Objects.equals(citiesWithoutDistrict, region.citiesWithoutDistrict);
+                Objects.equals(districts, region.districts);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(super.hashCode(), name, country, districts, citiesWithoutDistrict);
+        return Objects.hash(super.hashCode(), name, country);
     }
 
     /** Getter and Setter*/
@@ -93,18 +92,11 @@ public class Region extends AbstractEntity {
     }
 
     public Set<District> getDistricts() {
-        return districts;
+        return CommonUtil.getSafeSet(districts);
     }
 
-    public void setDistricts(Set<District> districts) {
-        this.districts = districts;
+    public Set<Place> getPlacesWithoutDistrict() {
+        return CommonUtil.getSafeSet(placesWithoutDistrict);
     }
 
-    public Set<Place> getCitiesWithoutDistrict() {
-        return citiesWithoutDistrict;
-    }
-
-    public void setCitiesWithoutDistrict(Set<Place> citiesWithoutDistrict) {
-        this.citiesWithoutDistrict = citiesWithoutDistrict;
-    }
 }
