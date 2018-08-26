@@ -1,12 +1,14 @@
 package app.service.impl;
 
+import app.model.entity.geography.Country;
+import app.model.entity.geography.District;
 import app.model.entity.geography.Place;
+import app.model.entity.geography.Region;
 import app.model.entity.organization.Company;
 import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
 import app.service.GeographicService;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -19,63 +21,64 @@ import static org.junit.Assert.*;
  * @author Plotnyk
  */
 public class GeographicServiceImplTest {
-    /*private static final int DEFAULT_CITY_ID = 1;
+    private static final int DEFAULT_CITY_ID = 1;
     private GeographicService service;
+    private Place place;
 
     @Before
     public void setup() {
         service = new GeographicServiceImpl();
+        place = new Place("Ирпень"
+                , new District("Киев-Святошинский"
+                , new Region("Киевская область"
+                , new Country("Украина"))));
     }
 
     @Test
     public void testNoDataReturnedAtStart() {
-        List<Place> cities = service.findCities();
-        assertTrue(cities.isEmpty());
+        List<Place> places = service.findPlaces();
+        assertTrue(places.isEmpty());
     }
 
     @Test
     public void testSaveNewCitySuccess() {
-        Place place = new Place("Kyiv");
-        service.saveCity(place);
+        service.savePlace(place);
 
-        List<Place> cities = service.findCities();
-        assertEquals(cities.size(), 1);
-        assertEquals(cities.get(0).getName(), "Kyiv");
+        List<Place> places = service.findPlaces();
+        assertEquals(places.size(), 1);
+        assertEquals(places.get(0).getName(), "Ирпень");
     }
 
     @Test(expected = NullPointerException.class)
     public void testSaveNullCityFailure() {
-        service.saveCity(null);
+        service.savePlace(null);
 
         assertTrue(false);
     }
 
     @Test
     public void testFindCityByIdSuccess() {
-        Place place = new Place("Odessa");
-        service.saveCity(place);
+        service.savePlace(place);
 
-        Optional<Place> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<Place> foundCity = service.findPlaceById(DEFAULT_CITY_ID);
         assertTrue(foundCity.isPresent());
         assertEquals(foundCity.get().getId(), DEFAULT_CITY_ID);
     }
 
     @Test
     public void testFindCityByIdNotFound() {
-        Optional<Place> foundCity = service.findCitiyById(DEFAULT_CITY_ID);
+        Optional<Place> foundCity = service.findPlaceById(DEFAULT_CITY_ID);
         assertFalse(foundCity.isPresent());
     }
 
     @Test
-    @Ignore
     public void testSearchCompaniesByNameSuccess() {
-        Place place = new Place("Odessa");
         place.setId(DEFAULT_CITY_ID);
-        Company company_a = place.addCompany("Best_1");
-        Company company_b = place.addCompany("Best_2");
-        service.saveCity(place);
+        place.addCompany("Best_1");
+        place.addCompany("Best_2");
+        service.savePlace(place);
 
-        List<Company> companies = service.searchCompanies(CompanyCriteria.byName("Odessa"), new RangeCriteria(1, 5));
+        List<Company> companies = service.searchCompanies(CompanyCriteria.byName("Ирпень"), new RangeCriteria(1, 5));
         assertNotNull(companies);
         assertEquals(companies.size(), 2);
         assertEquals(companies.get(0).getPlace(), place);
@@ -83,42 +86,9 @@ public class GeographicServiceImplTest {
 
     @Test
     public void testSearchCompaniesByNameNotFound() {
-        List<Company> companies = service.searchCompanies(CompanyCriteria.byName("Odessa"), new RangeCriteria(1, 5));
+        List<Company> companies = service.searchCompanies(CompanyCriteria.byName("Ирпень"), new RangeCriteria(1, 5));
         assertNotNull(companies);
         assertTrue(companies.isEmpty());
     }
 
-
-    @Test
-    @Ignore
-    public void testSearchBranchesByTransportTypeSuccess() {
-        *//*Place city = new Place("Odessa");
-        city.addCompany(TransportType.AUTO);
-        service.saveCity(city);
-        Place city2 = new Place("Kiev");
-        city2.setId(2);
-        city2.addStation(TransportType.AUTO);
-        service.saveCity(city2);
-
-        List<Station> stations = service.searchStations(new StationCriteria(TransportType.AUTO), new RangeCriteria(1, 5));
-        assertNotNull(stations);
-        assertEquals(stations.size(), 2);*//*
-    }
-
-
-    @Test
-    @Ignore
-    public void testSearchStationsByTransportTypeNotFound() {
-        *//*Place city = new Place("Odessa");
-        city.addStation(TransportType.AUTO);
-        service.saveCity(city);
-        Place city2 = new Place("Kiev");
-        city2.setId(2);
-        city2.addStation(TransportType.RAILWAY);
-        service.saveCity(city2);
-
-        List<Station> stations = service.searchStations(new StationCriteria(TransportType.AVIA), new RangeCriteria(1, 5));
-        assertNotNull(stations);
-        assertTrue(stations.isEmpty());*//*
-    }*/
 }

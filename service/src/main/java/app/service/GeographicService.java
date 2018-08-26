@@ -16,22 +16,22 @@ import java.util.Optional;
 public interface GeographicService {
 
     /**
-     * Returns list of existing cities
+     * Returns list of existing places
      * @return
      */
-    List<Place> findCities();
+    List<Place> findPlaces();
 
     /**
-     * Returns city with specified identifier. If no city is found then empty optional is
+     * Returns place with specified identifier. If no city is found then empty optional is
      * returned
      *
      * @param id
      * @return
      */
-    Optional<Place> findCitiyById(int id);
+    Optional<Place> findPlaceById(int id);
 
     /**
-     * Returns all the stations that match specified criteria
+     * Returns all the companies that match specified criteria
      * @param criteria
      * @param rangeCriteria
      * @return
@@ -43,5 +43,5 @@ public interface GeographicService {
      * Saves specified place instance
      * @param place
      */
-    void saveCity(Place place);
+    void savePlace(Place place);
 }
