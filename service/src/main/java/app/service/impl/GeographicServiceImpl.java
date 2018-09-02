@@ -1,17 +1,16 @@
 package app.service.impl;
 
+import app.model.entity.geography.Country;
 import app.model.entity.geography.Place;
 import app.infra.util.CommonUtil;
 import app.model.entity.organization.Company;
 import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
 import app.service.GeographicService;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 /**
  * Default implementation of the {@link GeographicService}
@@ -23,12 +22,14 @@ import java.util.stream.Stream;
 public class GeographicServiceImpl implements GeographicService{
     /**Internal list of places*/
     private final List<Place> places;
+    private final List<Country> countries;
 
     /**Auto-increment counter for entity id generation */
     private int counter = 0;
 
     public GeographicServiceImpl() {
         this.places = new ArrayList<Place>();
+        this.countries = new ArrayList<Country>();
     }
 
     @Override
@@ -62,6 +63,27 @@ public class GeographicServiceImpl implements GeographicService{
         }
 
 
+    }
+
+
+    /*СТРАНЫ*/
+    @Override
+    public List<Country> findCountry() {
+        return CommonUtil.getSafeList(countries);
+    }
+
+    @Override
+    public Optional<Country> findCountryById(int id) {
+        return countries.stream().filter(country -> country.getId()==id).findFirst();
+    }
+
+    @Override
+    public void saveCountry(Country country) {
+        Objects.requireNonNull(country, "'country' parameter is ont initialized");
+        if (!countries.contains(country)) {
+            country.setId(++counter);
+            countries.add(country);
+        }
     }
 
 }

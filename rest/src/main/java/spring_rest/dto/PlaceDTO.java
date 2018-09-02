@@ -1,26 +1,28 @@
-package spring_rest.dao;
+package spring_rest.dto;
 
+import app.model.entity.geography.District;
 import app.model.entity.geography.Place;
-import spring_rest.dao.base.BaseDTO;
+import app.model.entity.geography.Region;
+import spring_rest.dto.base.BaseDTO;
 
 /**
  * Holds city state for the client-server communication
  * @author Plotnyk
  *
  */
-public class CityDTO extends BaseDTO<Place> {
+public class PlaceDTO extends BaseDTO<Place>{
     private String name;
 
     /**
      * Name of the district where city is placed
      */
-    private String district;
+    private District district;
 
     /**
      * Name of the region where district is located.
      * Region is top-level area in the country
      */
-    private String region;
+    private Region region;
 
     public String getName() {
         return name;
@@ -30,19 +32,19 @@ public class CityDTO extends BaseDTO<Place> {
         this.name = name;
     }
 
-    public String getDistrict() {
+    public District getDistrict() {
         return district;
     }
 
-    public void setDistrict(String district) {
+    public void setDistrict(District district) {
         this.district = district;
     }
 
-    public String getRegion() {
+    public Region getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public void setRegion(Region region) {
         this.region = region;
     }
 }

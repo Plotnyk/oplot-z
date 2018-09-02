@@ -31,8 +31,11 @@ public class Country extends AbstractEntity {
         regions.remove(nameDelRegion);
     }
 
-    public Country(String name) {
+    public Country(final String name) {
         this.name = name;
+    }
+
+    public Country() {
     }
 
     @Override

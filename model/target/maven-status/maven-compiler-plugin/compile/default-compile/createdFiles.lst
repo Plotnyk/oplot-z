@@ -2,7 +2,6 @@ app\model\entity\organization\Performance.class
 app\infra\util\CommonUtil.class
 app\model\entity\geography\Street.class
 app\infra\exception\ConfigurationException.class
-app\model\baseDTO\BaseDTO.class
 app\model\entity\geography\Country.class
 app\infra\exception\CommunicationException.class
 app\infra\exception\FlowException.class

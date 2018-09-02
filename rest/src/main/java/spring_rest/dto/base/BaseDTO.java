@@ -1,6 +1,7 @@
-package spring_rest.dao.base;
+package spring_rest.dto.base;
 
 import app.model.entity.base.AbstractEntity;
+import app.model.transform.Transformable;
 
 /**
  * Base class for all DTO classes
@@ -8,7 +9,7 @@ import app.model.entity.base.AbstractEntity;
  * @author Plotnyk
  *
  */
-public abstract class BaseDTO<T extends AbstractEntity> {
+public abstract class BaseDTO<T extends AbstractEntity> implements Transformable<T> {
     /**
      * Unique entity identifier
      */
@@ -39,4 +40,5 @@ public abstract class BaseDTO<T extends AbstractEntity> {
     public void setId(int id) {
         this.id = id;
     }
+
 }

@@ -71,7 +71,7 @@ public class SitiTest {
     //проверка количества элементов в масиве
     @Test
     public void testGetCountArraySuccses() throws Exception {
-        this.mockMvc.perform(get("/all")
+        this.mockMvc.perform(get("/api/places")
                 .accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType("application/json;charset=UTF-8"))
@@ -81,7 +81,7 @@ public class SitiTest {
     //проверка соответствие значений в масиве
     @Test
     public void testFindCitiesSuccess() throws Exception {
-        MvcResult mvcResult = this.mockMvc.perform(get("/all")
+        MvcResult mvcResult = this.mockMvc.perform(get("/api/places")
                 .accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.*", contains("Odessa", "Kiyv")))

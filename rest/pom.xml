@@ -24,6 +24,11 @@
         <artifactId>model</artifactId>
         <version>0.0.1</version>
     </dependency>
+    <dependency>
+        <groupId>org.plotnyk</groupId>
+        <artifactId>service</artifactId>
+        <version>0.0.1</version>
+    </dependency>
     <!-- http client -->
     <dependency>
         <groupId>org.apache.httpcomponents</groupId>
@@ -50,13 +55,7 @@
         <scope>test</scope>
     </dependency>
 
-        <!--Test Rest
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.3.14.RELEASE</version>
-            <scope>test</scope>
-        </dependency>-->
+        <!--Test Rest-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>

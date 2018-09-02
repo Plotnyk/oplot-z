@@ -21,12 +21,6 @@ public class CategoriesController {
     @Autowired
     private AppCategoriesDao appCategoriesDao;
 
-
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-    public List<String> findCities() {
-        return Arrays.asList("Odessa", "Kiyv");
-    }
-
     @GetMapping("/" + VERSION + "/" + CATEGORIES_URL)
     public List<AppCategory> getAppCategories() {
         return appCategoriesDao.list();

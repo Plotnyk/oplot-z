@@ -49,9 +49,15 @@ public class District extends AbstractEntity {
         return Objects.hash(super.hashCode(), name, region);
     }
 
-    public District(String name, Region region) {
+    public District(final String name, final Region region) {
         this.name = name;
         this.region = region;
+    }
+    public District(final String name) {
+        this.name = name;
+    }
+
+    public District() {
     }
     /** Getter and Setter*/
     public String getName() {

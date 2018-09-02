@@ -1,8 +1,13 @@
-app\infra\util\Destination.class
 app\infra\util\Restricted.class
-app\infra\util\ReflectionUtilTest.class
 app\infra\util\BaseSource.class
+app\model\entity\geography\RegionTest.class
+app\model\entity\geography\CountryTest.class
+app\infra\util\Destination.class
+app\model\entity\organization\BranchTest.class
+app\infra\util\ReflectionUtilTest.class
+app\model\entity\geography\DistrictTest.class
 app\infra\util\BaseDestination.class
 app\model\entity\geography\PlaceTest.class
 app\infra\util\Source.class
 app\infra\util\ChecksTest.class
+app\model\entity\organization\CompanyTest.class

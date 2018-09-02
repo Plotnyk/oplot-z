@@ -45,6 +45,12 @@ public class Place extends AbstractEntity {
         this.district = district;
         this.region = district.getRegion();
     }
+    public Place(final String name) {
+        Objects.requireNonNull(name, "'name' of place parameter is not initialized");
+        this.name = name;
+    }
+    public Place() {
+    }
 
     /**
      * Adds specified company to the place company list

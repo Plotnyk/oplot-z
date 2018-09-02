@@ -1,12 +1,13 @@
 package app.service.transform;
 
 import app.model.entity.base.AbstractEntity;
+import app.model.entity.geography.Place;
 import app.model.transform.Transformable;
 
 /**
  * Represents transformation engine to convert business entities
  * into DTO objects
- * @author Morenets
+ * @author Plotnyk
  *
  */
 public interface Transformer {
@@ -34,6 +35,5 @@ public interface Transformer {
      * @return
      */
     <T extends AbstractEntity, P extends Transformable<T>> T untransform(P dto, Class<T> clz);
-
 }
 

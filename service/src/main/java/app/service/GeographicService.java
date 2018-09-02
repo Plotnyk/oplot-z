@@ -1,5 +1,6 @@
 package app.service;
 
+import app.model.entity.geography.Country;
 import app.model.entity.geography.Place;
 import app.model.entity.organization.Company;
 import app.model.search.criteria.CompanyCriteria;
@@ -44,4 +45,38 @@ public interface GeographicService {
      * @param place
      */
     void savePlace(Place place);
+
+
+    /*СТРАНЫ*/
+
+    /**
+     * Returns list of existing countries
+     * @return
+     */
+    List<Country> findCountry();
+
+    /**
+     * Returns country with specified identifier. If no city is found then empty optional is
+     * returned
+     *
+     * @param id
+     * @return
+     */
+    Optional<Country> findCountryById(int id);
+
+    /**
+     * Returns all the regiones that match specified criteria
+     * @param criteria
+     * @param rangeCriteria
+     * @return
+     */
+    //List<Company> searchRegion();
+
+
+    /**
+     * Saves specified country instance
+     * @param country
+     */
+    void saveCountry (Country country);
+
 }

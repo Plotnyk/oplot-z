@@ -69,11 +69,20 @@ public class Region extends AbstractEntity {
         return Objects.hash(super.hashCode(), name, country);
     }
 
-    /** Getter and Setter*/
-    public Region(String name, Country country) {
+
+    public Region(final String name, final Country country) {
         this.name = name;
         this.country = country;
     }
+
+    public Region(final String name) {
+        this.name = name;
+    }
+
+    public Region() {
+    }
+
+    /** Getter and Setter*/
 
     public String getName() {
         return name;
