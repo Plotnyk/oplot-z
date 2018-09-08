@@ -24,6 +24,7 @@ public class SimpleDTOTransformer implements Transformer {
         provider = new CachedFieldProvider();
     }
 
+
     @Override
     public <T extends AbstractEntity, P extends Transformable<T>> P transform(final T entity, final Class<P> clz) {
         checkParams(entity, clz);

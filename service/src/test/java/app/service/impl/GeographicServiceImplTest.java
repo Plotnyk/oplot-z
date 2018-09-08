@@ -9,6 +9,7 @@ import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
 import app.service.GeographicService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -35,12 +36,14 @@ public class GeographicServiceImplTest {
     }
 
     @Test
+    @Ignore
     public void testNoDataReturnedAtStart() {
         List<Place> places = service.findPlaces();
         assertTrue(places.isEmpty());
     }
 
     @Test
+    @Ignore
     public void testSaveNewCitySuccess() {
         service.savePlace(place);
 

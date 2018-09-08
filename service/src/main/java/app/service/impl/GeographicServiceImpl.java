@@ -8,6 +8,7 @@ import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
 import app.service.GeographicService;
 
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -16,9 +17,6 @@ import java.util.stream.Collectors;
  * Default implementation of the {@link GeographicService}
  * @author Plotnyk
  */
-
-//@Service("userService")
-//@Transactional
 public class GeographicServiceImpl implements GeographicService{
     /**Internal list of places*/
     private final List<Place> places;
@@ -31,6 +29,7 @@ public class GeographicServiceImpl implements GeographicService{
         this.places = new ArrayList<Place>();
         this.countries = new ArrayList<Country>();
     }
+
 
     @Override
     public List<Place> findPlaces() {
@@ -61,8 +60,6 @@ public class GeographicServiceImpl implements GeographicService{
             place.setId(++counter);
             places.add(place);
         }
-
-
     }
 
 
