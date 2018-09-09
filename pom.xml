@@ -36,7 +36,12 @@
         <!--Reflection commons lang3-->
         <commons.lang3>3.7</commons.lang3>
 
+        <!--Jersey for REST -->
         <jersey.version>2.19</jersey.version>
+
+        <!-- Hibernate -->
+        <hibernate.version>5.3.6.Final</hibernate.version>
+
     </properties>
 
 

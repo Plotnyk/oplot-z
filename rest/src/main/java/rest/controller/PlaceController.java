@@ -6,10 +6,11 @@ import app.model.entity.geography.Place;
 import app.model.entity.geography.Region;
 import app.service.GeographicService;
 import app.service.impl.GeographicServiceImpl;
-import app.service.transform.Transformer;
-import app.service.transform.impl.SimpleDTOTransformer;
+//import app.service.transform.Transformer;
+//import app.service.transform.impl.SimpleDTOTransformer;
 import jersey.repackaged.com.google.common.collect.Lists;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.modelmapper.ModelMapper;
 import rest.controller.base.BaseException;
 import rest.dto.PlaceDTO;
 
@@ -38,14 +39,14 @@ public class PlaceController extends BaseException {
     /**
      * DTO <-> Entity transformer
      */
-    private Transformer transformer;
+    private ModelMapper transformer;
     private int i = 0;
 
     public PlaceController() {
         Country cou = new Country("Украина");
         Region reg = new Region("Киевская", cou);
-        District dis = new District("Киево-святошинский");
-        transformer = new SimpleDTOTransformer();
+        District dis = new District("Киево-святошинский", reg);
+        transformer = new ModelMapper();
         service = new GeographicServiceImpl();
         service.savePlace(new Place("Киев", dis));
         service.savePlace(new Place("Ирпень",dis));
@@ -60,17 +61,17 @@ public class PlaceController extends BaseException {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<PlaceDTO> findCities() {
-        return service.findPlaces().stream().map((place) -> transformer.transform(place, PlaceDTO.class)).collect(Collectors.toList());
+        return service.findPlaces().stream().map((place) -> transformer.map(place, PlaceDTO.class)).collect(Collectors.toList());
     }
 
     /**
-     * Saves new place instance
+     * Saves new place instance (проверить мапер для untransform)
      * @return
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public void saveCity(PlaceDTO placeDTO) {
-        service.savePlace(transformer.untransform(placeDTO, Place.class));
+        service.savePlace(transformer.map(placeDTO, Place.class));
     }
 
     /**
@@ -89,7 +90,7 @@ public class PlaceController extends BaseException {
         if (!place.isPresent()) {
             return NOT_FOUND;
         }
-        return ok(transformer.transform(place.get(), PlaceDTO.class));
+        return ok(transformer.map(place.get(), PlaceDTO.class));
     }
 
 }

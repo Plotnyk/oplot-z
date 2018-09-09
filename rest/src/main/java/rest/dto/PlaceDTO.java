@@ -47,4 +47,13 @@ public class PlaceDTO extends BaseDTO<Place>{
     public void setRegion(Region region) {
         this.region = region;
     }
+
+    @Override
+    public String toString() {
+        return "PlaceDTO{" +
+                "name='" + name + '\'' +
+                ", district=" + district +
+                ", region=" + region +
+                '}';
+    }
 }
