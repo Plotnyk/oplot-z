@@ -17,6 +17,12 @@
             <artifactId>model</artifactId>
             <version>${parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.plotnyk</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

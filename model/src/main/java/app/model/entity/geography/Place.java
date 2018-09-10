@@ -38,6 +38,7 @@ public class Place extends AbstractEntity {
         this.name = name;
         this.region = region;
     }
+
     public Place(final String name, final District district) {
         Objects.requireNonNull(name, "'name' of place parameter is not initialized");
         Objects.requireNonNull(district, "'district' of place parameter is not initialized");
@@ -45,6 +46,7 @@ public class Place extends AbstractEntity {
         this.district = district;
         this.region = district.getRegion();
     }
+
     public Place(final String name) {
         Objects.requireNonNull(name, "'name' of place parameter is not initialized");
         this.name = name;
