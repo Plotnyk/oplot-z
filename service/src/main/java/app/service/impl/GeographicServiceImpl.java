@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * Default implementation of the {@link GeographicService}
+ * Default implementation of the  {@link GeographicService}
  * @author Plotnyk
  */
 public class GeographicServiceImpl implements GeographicService{
