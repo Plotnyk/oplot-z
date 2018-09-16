@@ -1,5 +1,5 @@
 /*
-package mvc.rest;
+package mvc.app.rest;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -81,7 +81,7 @@ public class CityResourceTest {
 
         when(todoServiceMock.findCities()).thenReturn(testAS);
         System.out.println("3");
-        mockMvc.perform(get("/city/rest/getAllDBLogsJSON_A"))
+        mockMvc.perform(get("/city/app.rest/getAllDBLogsJSON_A"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$", hasSize(2)))

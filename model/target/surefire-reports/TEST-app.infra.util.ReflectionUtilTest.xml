@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="app.infra.util.ReflectionUtilTest" time="0.068" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="app.infra.util.ReflectionUtilTest" time="0.08" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.1.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,12 +62,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFindSimilarFieldsWithIgnoreSuccess" time="0.067"/>
+  <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFindSimilarFieldsWithIgnoreSuccess" time="0.077"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="createInstanceSuccess" time="0"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="testCopyFieldsSuccess" time="0"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="testFindSimilarFieldsSuccess" time="0"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="testCreateInstanceFailure" time="0.001"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFieldsDestinationNullFailure" time="0"/>
-  <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFindSimilarFieldsForStaticAndFinalSuccess" time="0"/>
+  <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFindSimilarFieldsForStaticAndFinalSuccess" time="0.002"/>
   <testcase classname="app.infra.util.ReflectionUtilTest" name="copyFindSimilarFieldsForBaseFieldSuccess" time="0"/>
 </testsuite>

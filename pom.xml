@@ -26,6 +26,10 @@
 
         <!-- for servelet -->
         <javax.servlet.api>4.0.1</javax.servlet.api>
+        <jersey.guava>2.26-b03</jersey.guava>
+
+        <!-- Spring -->
+        <spring.version>5.0.9.RELEASE</spring.version>
 
         <!-- for json -->
         <jackson.version>2.27</jackson.version>
@@ -33,29 +37,35 @@
         <!--LOGGING project -->
         <lslf4j.version>1.7.25</lslf4j.version>
         <log4j.version>2.10.0</log4j.version>
+
         <!--Reflection commons lang3-->
         <commons.lang3>3.7</commons.lang3>
 
         <!--Jersey for REST -->
-        <jersey.version>2.19</jersey.version>
+        <jersey.version>2.27</jersey.version>
 
         <!-- Hibernate -->
         <hibernate.version>5.3.6.Final</hibernate.version>
+
+        <!--DTO-->
+        <modelmapper.version>2.2.0</modelmapper.version>
 
     </properties>
 
 
     <dependencies>
         <!--Google collections-->
-        <dependency>
+<!--        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>26.0-jre</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
-
-        <!-- Spring -->
-
-        <!-- Servelet -->
 
         <!--Test-->
         <dependency>

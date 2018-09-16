@@ -1,8 +1,8 @@
 package app.service.impl;
 
+import app.infra.util.CommonUtil;
 import app.model.entity.geography.Country;
 import app.model.entity.geography.Place;
-import app.infra.util.CommonUtil;
 import app.model.entity.organization.Company;
 import app.model.search.criteria.CompanyCriteria;
 import app.model.search.criteria.range.RangeCriteria;
@@ -10,15 +10,14 @@ import app.service.GeographicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import persistence.repository.PlaceRepository;
-import persistence.repository.inmemory.InMemoryPlaceRepository;
 
-
+import javax.inject.Inject;
 import java.util.*;
 import java.util.stream.Collectors;
 
 
 /**
- * Default implementation of the {@link GeographicService}
+ * Default implementation of the a{@link GeographicService}
  * @author Plotnyk
  */
 public class GeographicServiceImpl implements GeographicService{
@@ -30,17 +29,15 @@ public class GeographicServiceImpl implements GeographicService{
     /**Auto-increment counter for entity id generation */
     private int counter = 0;
 
-    public GeographicServiceImpl() {
-        this.placeRepository = new InMemoryPlaceRepository();
+    @Inject
+    public GeographicServiceImpl(PlaceRepository placeRepository) {
+        this.placeRepository = placeRepository;
         this.countries = new ArrayList<Country>();
     }
 
 
     @Override
     public List<Place> findPlaces() {
-        if (LOGGER.isDebugEnabled()) {
-            LOGGER.debug("<-----------------Find all places---------------->");
-        }
         return placeRepository.findAll();
     }
 
