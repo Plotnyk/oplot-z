@@ -11,42 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0372effd-b9cc-4d32-8cdc-4cd650433dce" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/rest/src/main/java/app/config/ComponentBinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/model-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-0.0.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/TEST-app.infra.util.ChecksTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/TEST-app.infra.util.ChecksTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/TEST-app.infra.util.ReflectionUtilTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/TEST-app.infra.util.ReflectionUtilTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/app.infra.util.ChecksTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/app.infra.util.ChecksTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/target/surefire-reports/app.infra.util.ReflectionUtilTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/surefire-reports/app.infra.util.ReflectionUtilTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation-site/src/main/java/mvc/rest/CityResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation-site/src/main/java/mvc/rest/RestController_B.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation-site/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/presentation-site/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation-site/src/test/java/mvc/rest/CityResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/presentation-site/src/test/java/mvc/rest/CityResourceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/config/JerseyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/config/JerseyConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/ApplicationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/CategoriesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/CountryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/controller/CountryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/Endpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/controller/Endpoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/PlaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/controller/PlaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/controller/base/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/controller/base/BaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/dao/AppCategoriesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/dao/AppCategoriesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/dao/ApplicationsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/dao/ApplicationsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/dto/PlaceDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/dto/PlaceDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/dto/base/BaseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/dto/base/BaseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/model/AppCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/model/AppCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/rest/model/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/app/rest/model/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/rest/controller/SitiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/app/rest/controller/SitiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/rest/dto/transform/impl/SimpleDTOTransformerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/app/rest/dto/transform/impl/SimpleDTOTransformerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/app/service/impl/GeographicServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/app/service/impl/GeographicServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/app/service/impl/GeographicServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/app/service/impl/GeographicServiceImplTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/rest/target/" />
@@ -139,10 +104,11 @@
       <file leaf-file-name="GeographicServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/app/service/impl/GeographicServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+            <state relative-caret-position="170">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1223#1224#0" expanded="true" />
                 <element signature="e#1271#1272#0" expanded="true" />
               </folding>
             </state>
@@ -199,6 +165,7 @@
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -963,7 +930,7 @@
       <workItem from="1537027276541" duration="261000" />
       <workItem from="1537027595666" duration="2868000" />
       <workItem from="1537037128945" duration="6091000" />
-      <workItem from="1537087176123" duration="13091000" />
+      <workItem from="1537087176123" duration="13873000" />
     </task>
     <task id="LOCAL-00001" summary="Обновленный лог">
       <created>1534624668050</created>
@@ -1084,7 +1051,28 @@
       <option name="project" value="LOCAL" />
       <updated>1536523304358</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Внедрение зависимостей">
+      <created>1537127321742</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1537127321742</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Внедрение зависимостей">
+      <created>1537127462114</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1537127462114</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Внедрение зависимостей3">
+      <created>1537127489326</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1537127489326</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1120,7 +1108,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212430000" />
+    <option name="totallyTimeSpent" value="213212000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1136,7 +1124,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50151974" side_tool="true" weight="0.47960848" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.33931485" />
       <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.4972826" weight="0.24012157" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
@@ -1153,8 +1141,8 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.30609897" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.09090909" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.47960848" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49848023" weight="0.08972268" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924013" weight="0.47960848" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32911393" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79173553" visible="true" weight="0.2963526" />
       <window_info anchor="right" id="Bean Validation" order="3" sideWeight="0.49814126" weight="0.32978722" />
@@ -1191,7 +1179,9 @@
     <MESSAGE value="Обновил скрвис" />
     <MESSAGE value="Создание репозитория" />
     <MESSAGE value="Удаление не понятных файлов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удаление не понятных файлов" />
+    <MESSAGE value="Внедрение зависимостей" />
+    <MESSAGE value="Внедрение зависимостей3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Внедрение зависимостей3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1487,10 +1477,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/app/service/impl/GeographicServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="37" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+        <state relative-caret-position="170">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
             <element signature="e#1271#1272#0" expanded="true" />
           </folding>
         </state>
