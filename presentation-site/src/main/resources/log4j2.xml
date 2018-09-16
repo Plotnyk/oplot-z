@@ -19,7 +19,7 @@
 
 
         <!-- Console Appender -->
-        <Console name="DEBUG" target="SYSTEM_OUT">
+        <Console name="SYOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="[%-5level] %d{HH:mm:ss.SSS} %c{1} - %msg%n" />
         </Console>
     </Appenders>
@@ -32,7 +32,7 @@
         </Logger>
 
         <Root  level="DEBUG">
-            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="SYOUT" />
         </Root>
 
     </Loggers>

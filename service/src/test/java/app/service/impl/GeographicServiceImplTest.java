@@ -11,6 +11,7 @@ import app.service.GeographicService;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import persistence.repository.inmemory.InMemoryPlaceRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,12 +24,14 @@ import static org.junit.Assert.*;
  */
 public class GeographicServiceImplTest {
     private static final int DEFAULT_CITY_ID = 1;
+
     private GeographicService service;
     private Place place;
 
     @Before
+
     public void setup() {
-        service = new GeographicServiceImpl();
+        service= new GeographicServiceImpl(new InMemoryPlaceRepository());
         place = new Place("Ирпень"
                 , new District("Киев-Святошинский"
                 , new Region("Киевская область"
