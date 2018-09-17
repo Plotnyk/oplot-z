@@ -1,12 +1,10 @@
 package app.rest.dto;
 
-import app.model.entity.geography.District;
 import app.model.entity.geography.Place;
-import app.model.entity.geography.Region;
 import app.rest.dto.base.BaseDTO;
 
 /**
- * Holds city state for the client-server communication
+ * Holds place state for the client-server communication
  * @author Plotnyk
  *
  */
@@ -16,13 +14,13 @@ public class PlaceDTO extends BaseDTO<Place>{
     /**
      * Name of the district where city is placed
      */
-    private District district;
+    private String districtName;
 
     /**
      * Name of the region where district is located.
      * Region is top-level area in the country
      */
-    private Region region;
+    private String regionName;
 
     public String getName() {
         return name;
@@ -32,28 +30,29 @@ public class PlaceDTO extends BaseDTO<Place>{
         this.name = name;
     }
 
-    public District getDistrict() {
-        return district;
+
+    public String getDistrictName() {
+        return districtName;
     }
 
-    public void setDistrict(District district) {
-        this.district = district;
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
     }
 
-    public Region getRegion() {
-        return region;
+    public String getRegionName() {
+        return regionName;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
     }
 
     @Override
     public String toString() {
         return "PlaceDTO{" +
                 "name='" + name + '\'' +
-                ", district=" + district +
-                ", region=" + region +
+                ", district=" + districtName +
+                ", region=" + regionName +
                 '}';
     }
 }

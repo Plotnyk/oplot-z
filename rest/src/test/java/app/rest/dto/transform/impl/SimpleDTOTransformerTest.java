@@ -39,8 +39,8 @@ public class SimpleDTOTransformerTest {
         assertNotNull(dto);
         assertEquals(dto.getId(), city.getId());
         assertEquals(dto.getName(), city.getName());
-        assertEquals(dto.getDistrict(), city.getDistrict());
-        assertEquals(dto.getRegion(), city.getRegion());
+        assertEquals(dto.getDistrictName(), city.getDistrict().getName());
+        assertEquals(dto.getRegionName(), city.getRegion().getName());
     }
 
     @Test(expected=java.lang.IllegalArgumentException.class)
@@ -57,16 +57,16 @@ public class SimpleDTOTransformerTest {
     public void testUnTransformCitySuccess() {
         PlaceDTO dto = new PlaceDTO();
         dto.setId(1);
-        dto.setRegion(new Region("Киевская область", new Country("Украина")));
-        dto.setDistrict(new District("Киев-Святошинский",new Region("Киевская область", new Country("Украина"))));
+        dto.setRegionName("Киевская область");
+        dto.setDistrictName("Киев-Святошинский");
         dto.setName("Ирпень");
 
         Place city = transformer.map(dto, Place.class);
         assertNotNull(city);
         assertEquals(dto.getId(), city.getId());
         assertEquals(dto.getName(), city.getName());
-        assertEquals(dto.getDistrict(), city.getDistrict());
-        assertEquals(dto.getRegion(), city.getRegion());
+        assertEquals(dto.getDistrictName(), city.getDistrict().getName());
+        assertEquals(dto.getRegionName(), city.getRegion().getName());
     }
 
     @Test(expected=java.lang.IllegalArgumentException.class)
