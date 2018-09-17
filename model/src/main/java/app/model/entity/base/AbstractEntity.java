@@ -2,7 +2,7 @@ package app.model.entity.base;
 
 import app.model.entity.person.User;
 
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -22,6 +22,9 @@ public abstract class AbstractEntity {
     /**Last person who modified entity*/
     private User modifiedBy;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     public int getId() {
         return id;
     }
@@ -30,6 +33,7 @@ public abstract class AbstractEntity {
         this.id = id;
     }
 
+    @Column(name = "CREATE_AT", nullable = false, updatable = false)
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -38,6 +42,7 @@ public abstract class AbstractEntity {
         this.createdAt = createdAt;
     }
 
+    @Column(name = "MODIFIED_AT", insertable = false)
     public LocalDateTime getModifiedAt() {
         return modifiedAt;
     }
@@ -46,6 +51,8 @@ public abstract class AbstractEntity {
         this.modifiedAt = modifiedAt;
     }
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = {})
+    @JoinColumn(name = "CREATED_BY", updatable = false)
     public User getCreatedBy() {
         return createdBy;
     }
@@ -54,6 +61,8 @@ public abstract class AbstractEntity {
         this.createdBy = createdBy;
     }
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = {})
+    @JoinColumn(name = "MODIFIED_BY", insertable = false)
     public User getModifiedBy() {
         return modifiedBy;
     }
