@@ -1,11 +1,11 @@
 package app.model.entity.geography;
 
-import app.model.entity.base.AbstractEntity;
-import app.model.entity.geography.num.TypePlace;
-import app.model.entity.organization.Branch;
-import app.model.entity.organization.Company;
 import app.infra.util.CommonUtil;
+import app.model.entity.base.AbstractEntity;
+import app.model.entity.organization.Company;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,6 +14,8 @@ import java.util.Set;
  * Any locality that contains company or branch
  * @author Plotnyk
  */
+@Table(name="Place")
+@Entity
 public class Place extends AbstractEntity {
 
     private String name;

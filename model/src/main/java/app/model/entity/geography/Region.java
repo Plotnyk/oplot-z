@@ -3,11 +3,15 @@ package app.model.entity.geography;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 //Область
+@Table(name = "REGION")
+@Entity
 public class Region extends AbstractEntity {
     private String name;
     private Country country;

@@ -1,9 +1,12 @@
 package app.model.entity.geography;
 
+import javax.persistence.Embeddable;
+
 /**
  * Geographical coordinate of an object
  * @author Plotnyk
  */
+@Embeddable
 public class Coordinate {
     private double x;
 

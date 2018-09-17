@@ -1,12 +1,15 @@
 package app.model.entity.base;
 
-import java.time.LocalDateTime;
 import app.model.entity.person.User;
+
+import javax.persistence.MappedSuperclass;
+import java.time.LocalDateTime;
 
 /**
  * Base class for all entities
  * @author Plotnyk
  */
+@MappedSuperclass
 public abstract class AbstractEntity {
     /**Unique entity identifier*/
     private int id;

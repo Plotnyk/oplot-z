@@ -3,10 +3,14 @@ package app.model.entity.geography;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Table(name = "COUNTRY")
+@Entity
 public class Country extends AbstractEntity {
     private String name;
     private String codePhone;

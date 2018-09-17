@@ -2,11 +2,14 @@ package app.model.entity.geography;
 
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Embeddable;
+
 /**
  *Value type that stores address attributes
  * of the specific office or branch or person
  * @author Plotnyk
  */
+@Embeddable
 public class Address extends AbstractEntity {
     private Place place;
 

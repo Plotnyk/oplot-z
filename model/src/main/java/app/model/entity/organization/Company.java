@@ -7,6 +7,8 @@ import app.model.entity.geography.Place;
 import app.model.search.criteria.CompanyCriteria;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -15,6 +17,9 @@ import java.util.Set;
  *The company that provides services
  * @author Plotnyk
  */
+
+@Table(name = "COMPANY")
+@Entity
 public class Company extends AbstractEntity {
     /** Name company*/
     private String nameCompany;

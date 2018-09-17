@@ -3,9 +3,11 @@ package app.model.entity.organization;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
-import app.model.entity.geography.Place;
 import app.model.entity.geography.Coordinate;
+import app.model.entity.geography.Place;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,6 +16,9 @@ import java.util.Set;
  * Branch of the company where services will be provided
  * @author Plotnyk
  */
+
+@Table(name = "BRANCH")
+@Entity
 public class Branch extends AbstractEntity {
     /**Name Branch */
     private String nameBranch;

@@ -3,6 +3,11 @@ package app.model.entity.organization;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Table(name="PERFORMANCE")
+@Entity
 public class Performance extends AbstractEntity {
     private String name;
     private Address addressLocation;
