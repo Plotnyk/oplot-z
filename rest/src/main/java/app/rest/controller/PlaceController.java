@@ -53,7 +53,7 @@ public class PlaceController extends BaseException {
 
 
     /**
-     * Returns all the existing places
+     * Returns all the existing places x
      * @return
      */
     @GET
