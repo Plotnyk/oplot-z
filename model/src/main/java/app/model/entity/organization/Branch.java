@@ -6,6 +6,7 @@ import app.model.entity.geography.Address;
 import app.model.entity.geography.Coordinate;
 import app.model.entity.geography.Place;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.HashSet;
@@ -163,6 +164,7 @@ public class Branch extends AbstractEntity {
         this.parentCompany = parentCompany;
     }
 
+    @Embedded
     public Coordinate getCoordinate() {
         return coordinate;
     }

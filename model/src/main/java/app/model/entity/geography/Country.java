@@ -3,6 +3,7 @@ package app.model.entity.geography;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.HashSet;
@@ -74,6 +75,7 @@ public class Country extends AbstractEntity {
         this.name = name;
     }
 
+    @Embedded
     public Coordinate getCoordinate() {
         return coordinate;
     }
@@ -93,4 +95,5 @@ public class Country extends AbstractEntity {
     public Set<Region> getRegions() {
         return CommonUtil.getSafeSet(regions);
     }
+
 }

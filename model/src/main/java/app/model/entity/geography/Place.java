@@ -4,8 +4,7 @@ import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.organization.Company;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -24,6 +23,8 @@ public class Place extends AbstractEntity {
 
     /** Name of the district where place is placed (район) */
     private District district;
+
+    private Coordinate coordinate;
 
     /**
      * Name of the region where district is located. Region is top-level area in
@@ -108,10 +109,12 @@ public class Place extends AbstractEntity {
     }
 
     /*Getters and Setters*/
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "place", orphanRemoval = true)
     public Set<Company> getCompanies() {
         return CommonUtil.getSafeSet(companies);
     }
 
+    @Column(name = "NAME", nullable = false, length = 32)
     public String getName() {
         return name;
     }
@@ -136,6 +139,8 @@ public class Place extends AbstractEntity {
         this.district = district;
     }
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "TYPE_PLACE")
     public String getTypePlace() {
         return typePlace;
     }
@@ -143,4 +148,14 @@ public class Place extends AbstractEntity {
     public void setTypePlace(String typePlace) {
         this.typePlace = typePlace;
     }
+
+    @Embedded
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
 }

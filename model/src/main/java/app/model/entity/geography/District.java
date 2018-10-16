@@ -3,6 +3,7 @@ package app.model.entity.geography;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.HashSet;
@@ -17,6 +18,7 @@ public class District extends AbstractEntity {
     private String name;
     private Region region;
     private Set<Place> places;
+    private Coordinate coordinate;
 
     public Place addPlace(final String nameNewCity) {
         Objects.requireNonNull(nameNewCity, "'nameNewCity' parameter is not initialized");
@@ -82,5 +84,14 @@ public class District extends AbstractEntity {
 
     public Set<Place> getPlaces() {
         return CommonUtil.getSafeSet(places);
+    }
+
+    @Embedded
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
     }
 }

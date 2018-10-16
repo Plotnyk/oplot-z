@@ -7,8 +7,7 @@ import app.model.entity.geography.Place;
 import app.model.search.criteria.CompanyCriteria;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -147,6 +146,7 @@ public class Company extends AbstractEntity {
         this.nameCompany = nameCompany;
     }
 
+    @Embedded
     public Address getAddressLocation() {
         return addressLocation;
     }
@@ -159,6 +159,8 @@ public class Company extends AbstractEntity {
         return CommonUtil.getSafeSet(branches);
     }
 
+    @ManyToOne(cascade = {}, fetch = FetchType.EAGER)
+    @JoinColumn(name = "PLACE_ID")
     public Place getPlace() {
         return place;
     }

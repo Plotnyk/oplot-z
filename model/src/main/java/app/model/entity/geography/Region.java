@@ -3,6 +3,7 @@ package app.model.entity.geography;
 import app.infra.util.CommonUtil;
 import app.model.entity.base.AbstractEntity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.HashSet;
@@ -15,6 +16,7 @@ import java.util.Set;
 public class Region extends AbstractEntity {
     private String name;
     private Country country;
+    private Coordinate coordinate;
     //районы области
     private Set<District> districts;
 
@@ -112,4 +114,12 @@ public class Region extends AbstractEntity {
         return CommonUtil.getSafeSet(placesWithoutDistrict);
     }
 
+    @Embedded
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
 }

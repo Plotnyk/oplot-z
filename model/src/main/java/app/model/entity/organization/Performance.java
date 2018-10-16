@@ -2,7 +2,9 @@ package app.model.entity.organization;
 
 import app.model.entity.base.AbstractEntity;
 import app.model.entity.geography.Address;
+import app.model.entity.geography.Coordinate;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,6 +16,7 @@ public class Performance extends AbstractEntity {
     private Branch parentBranch;
     private Company parentCompany;
     private String phone;
+    private Coordinate coordinate;
 
     public Performance(String name, Company parentCompany) {
         this.name = name;
@@ -65,5 +68,14 @@ public class Performance extends AbstractEntity {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Embedded
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
     }
 }
